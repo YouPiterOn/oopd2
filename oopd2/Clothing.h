@@ -3,12 +3,12 @@
 
 class Clothing : public Product {
 private:
-    std::string _size;
-    std::string _color;
-    std::string _material;
+    std::string _size = "";
+    std::string _color = "";
+    std::string _material = "";
 
 public:
-    Clothing(std::string name, int price, int quantityInStock, std::string size, std::string color, std::string material);
+    Clothing(std::string name, float price, int quantityInStock, std::string size, std::string color, std::string material);
 
     std::string getSize();
     std::string getColor();

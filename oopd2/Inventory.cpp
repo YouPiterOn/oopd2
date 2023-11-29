@@ -3,11 +3,12 @@
 
 Inventory::Inventory() {}
 
-Inventory::Inventory(std::list<Product> products) {
-    for (Product product : products) {
+Inventory::Inventory(std::list<Product>* products) {
+    for (auto iter = products->begin(); iter != products->end(); ++iter) {
+        Product* product = &*iter;
         addProduct(product);
-        if (product.getQuantityInStock() <= _lowStockLimit) {
-            addToLowStock(findProduct(product.getProductID()));
+        if (product->getQuantityInStock() <= _lowStockLimit) {
+            addToLowStock(product);
         }
     }
 }
@@ -27,8 +28,8 @@ void Inventory::removeFromLowStock(std::string productID) {
     }
 }
 
-void Inventory::addProduct(Product product) {
-    _products.push_back(new Product(product));
+void Inventory::addProduct(Product* product) {
+    _products.push_back(product);
 }
 
 void Inventory::removeProduct(std::string productID) {

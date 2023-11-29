@@ -1,6 +1,6 @@
 #include "Clothing.h"
 
-Clothing::Clothing(std::string name, int price, int quantityInStock, std::string size, std::string color, std::string material) {
+Clothing::Clothing(std::string name, float price, int quantityInStock, std::string size, std::string color, std::string material) {
     setName(name);
     setPrice(price);
     setQuantityInStock(quantityInStock);

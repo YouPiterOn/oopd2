@@ -1,6 +1,6 @@
 #include "Product.h"
 
-int Product::getPrice() {
+float Product::getPrice() {
     return _price;
 }
 
@@ -16,7 +16,7 @@ int Product::getQuantityInStock() {
     return _quantityInStock;
 }
 
-void Product::setPrice(int price) {
+void Product::setPrice(float price) {
     _price = price;
 }
 
@@ -32,6 +32,6 @@ void Product::setQuantityInStock(int quantityInStock) {
     _quantityInStock = quantityInStock;
 }
 
-int Product::getTotalCost() {
+float Product::getTotalCost() {
     return _quantityInStock * _price;
 }

@@ -1,6 +1,6 @@
 #include "Books.h"
 
-Books::Books(std::string name, int price, int quantityInStock, std::string author, std::string genre, std::string ISBN) {
+Books::Books(std::string name, float price, int quantityInStock, std::string author, std::string genre, std::string ISBN) {
     setName(name);
     setPrice(price);
     setQuantityInStock(quantityInStock);

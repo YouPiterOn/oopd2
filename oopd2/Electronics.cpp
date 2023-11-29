@@ -1,6 +1,6 @@
 #include "Electronics.h"
 
-Electronics::Electronics(std::string name, int price, int quantityInStock, std::string brand, std::string model, int powerConsumption) {
+Electronics::Electronics(std::string name, float price, int quantityInStock, std::string brand, std::string model, int powerConsumption) {
     setName(name);
     setPrice(price);
     setQuantityInStock(quantityInStock);

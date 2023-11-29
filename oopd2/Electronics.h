@@ -4,12 +4,12 @@
 
 class Electronics : public Product {
 private:
-    std::string _brand;
-    std::string _model;
-    int _powerConsumption;
+    std::string _brand = "";
+    std::string _model = "";
+    int _powerConsumption = 0;
 
 public:
-    Electronics(std::string name, int price, int quantityInStock, std::string brand, std::string model, int powerConsumption);
+    Electronics(std::string name, float price, int quantityInStock, std::string brand, std::string model, int powerConsumption);
 
     std::string getBrand();
     std::string getModel();

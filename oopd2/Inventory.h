@@ -14,9 +14,9 @@ private:
 public:
     Inventory();
 
-    Inventory(std::list<Product> products);
+    Inventory(std::list<Product>* products);
 
-    void addProduct(Product product);
+    void addProduct(Product* product);
 
     void removeProduct(std::string productID);
 

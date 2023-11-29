@@ -7,7 +7,7 @@ private:
     std::string _orderID;
     std::string _customer;
     std::list<Product> _products;
-    int _totalCost;
+    float _totalCost;
     bool _orderStatus;
 
     void calculateTotalCost();

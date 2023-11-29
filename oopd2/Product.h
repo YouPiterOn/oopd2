@@ -4,21 +4,21 @@
 
 class Product {
 private:
-    int _price;
-    std::string _name;
-    std::string _productID;
-    int _quantityInStock;
+    float _price = 0;
+    std::string _name = "";
+    std::string _productID = "";
+    int _quantityInStock= 0;
 
 public:
-    int getPrice();
+    float getPrice();
     std::string getName();
     std::string getProductID();
     int getQuantityInStock();
 
-    void setPrice(int price);
+    void setPrice(float price);
     void setName(std::string name);
     void setProductID(std::string productID);
     void setQuantityInStock(int quantityInStock);
 
-    int getTotalCost();
+    float getTotalCost();
 };

@@ -1,16 +1,20 @@
 #include "ProductCatalog.h"
+#include <string>
 #include <iostream>
 
 ProductCatalog::ProductCatalog() {}
 
-ProductCatalog::ProductCatalog(std::list<Product> products) {
-    for (Product product : products) {
+ProductCatalog::ProductCatalog(std::list<Product>* products) {
+    for (auto iter = products->begin(); iter != products->end(); ++iter) {
+        Product* product = &*iter;
         addProduct(product);
     }
 }
 
-void ProductCatalog::addProduct(Product product) {
-    _products.push_back(new Product(product));
+void ProductCatalog::addProduct(Product* product) {
+    product->setProductID(std::to_string(idPointer));
+    _products.push_back(product);
+    idPointer++;
 }
 
 Product* ProductCatalog::findProduct(std::string productID) {
