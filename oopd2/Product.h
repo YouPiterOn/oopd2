@@ -10,6 +10,7 @@ private:
     int _quantityInStock= 0;
 
 public:
+    virtual ~Product() {}
     float getPrice();
     std::string getName();
     std::string getProductID();
@@ -21,4 +22,6 @@ public:
     void setQuantityInStock(int quantityInStock);
 
     float getTotalCost();
+
+    void Print();
 };

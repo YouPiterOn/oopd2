@@ -35,3 +35,7 @@ void Product::setQuantityInStock(int quantityInStock) {
 float Product::getTotalCost() {
     return _quantityInStock * _price;
 }
+
+void Product::Print() {
+    std::cout << _productID << ", " << _name << ": $" << _price << ", In stock: " << _quantityInStock << std::endl;
+}

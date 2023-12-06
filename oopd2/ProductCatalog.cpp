@@ -17,6 +17,15 @@ void ProductCatalog::addProduct(Product* product) {
     idPointer++;
 }
 
+Product* ProductCatalog::SearchByName(std::string name) {
+    for (Product* product : _products) {
+        if (product->getName() == name) {
+            return product;
+        }
+    }
+    return nullptr;
+}
+
 Product* ProductCatalog::findProduct(std::string productID) {
     for (Product* product : _products) {
         if (product->getProductID() == productID) {
@@ -38,9 +47,6 @@ void ProductCatalog::removeProduct(std::string productID) {
 
 void ProductCatalog::viewProducts() {
     for (Product* product : _products) {
-        std::cout << product->getName() << ", ";
-        std::cout << product->getProductID() << ", ";
-        std::cout << product->getPrice() << ", ";
-        std::cout << product->getQuantityInStock() << std::endl;
+        product->Print();
     }
 }

@@ -14,6 +14,8 @@ public:
 
     void addProduct(Product* product);
 
+    Product* SearchByName(std::string name);
+
     Product* findProduct(std::string productID);
 
     void removeProduct(std::string productID);

@@ -1,13 +1,7 @@
 #include "Order.h"
 
-Order::Order(std::string orderID, std::string customer) {
-    _orderID = orderID;
-    _customer = customer;
-    _totalCost = 0;
-    _orderStatus = false;
-}
 
-void Order::addProduct(Product product) {
+void Order::addProduct(Product* product) {
     _products.push_back(product);
     calculateTotalCost();
 }
@@ -18,7 +12,21 @@ void Order::changeStatus() {
 
 void Order::calculateTotalCost() {
     _totalCost = 0;
-    for (Product product : _products) {
-        _totalCost += product.getPrice();
+    for (Product* product : _products) {
+        _totalCost += product->getPrice();
+    }
+}
+
+void Order::Print() {
+    std::cout << std::endl << _customer << ", ID " << _orderID << std::endl;
+    for (Product* product : _products) {
+        std::cout << product->getName() << ", $" << product->getPrice() << std::endl;
+    }
+    std::cout << "Total: " << _totalCost << std::endl;
+    if (_orderStatus) {
+        std::cout << "Completed" << std::endl;
+    }
+    else {
+        std::cout << "In progress" << std::endl;
     }
 }
